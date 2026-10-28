@@ -1,4 +1,4 @@
-FROM php:8.2.28-fpm-bookworm
+FROM php:8.2.35-fpm-bookworm
 
 RUN apt update && apt install -y \
     git \
