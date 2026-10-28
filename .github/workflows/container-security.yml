@@ -1,0 +1,19 @@
+name: Container Security
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  container-security:
+    permissions:
+      contents: read
+      security-events: write
+    uses: advanced-security/reusable-workflows/.github/workflows/container-security.yml@main
+    with:
+      container-file: Dockerfile
+      scanning-block: "false"
